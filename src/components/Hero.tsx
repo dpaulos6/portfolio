@@ -1,47 +1,34 @@
-import profileImg from "../assets/personal-pic.png";
-import Button from "./Button.tsx";
-import VerticalAlignBottomOutlinedIcon from "@mui/icons-material/VerticalAlignBottomOutlined";
-function Hero() {
+import { Download } from 'lucide-react'
+import profileImg from '/personal-pic.png'
+import Button from './Button.tsx'
+
+export default function Hero() {
   return (
-    <div className="flex flex-col gap-9 items-center w-screen">
+    <div className="flex w-screen flex-col items-center gap-9 px-4">
       <img
         src={profileImg}
         alt="pesonal-picture"
-        className=" w-[240px] mt-[30px] border-2 border-[#00BFFF] rounded-[50%]
-        "
+        className="border-accent mt-[30px] w-[240px] rounded-full border-2"
       />
-      <h1
-        className=" text-3xl sm:text-4xl md:text-5xl lg:text-6xl
-                 w-[80%] mt-12 text-center md:w-[70%] lg:w-[60%]
-                 font-bold"
-      >
-        <span className=" bg-clip-text text-transparent bg-gradient-to-r from-[#007BFF] to-[#52D3B8]">
+      <h1 className="mt-12 w-full max-w-sm text-center text-2xl font-bold sm:max-w-xl sm:text-4xl lg:max-w-4xl lg:text-6xl">
+        <span className="from-primary to-secondary bg-gradient-to-r bg-clip-text text-transparent">
           I'm Taha Zoabi,
-        </span>{" "}
+        </span>{' '}
         Software Engineering Student.
       </h1>
-      <p
-        className=" w-full md:w-[90%] text-md  md:text-lg leading-6 text-center
-                 sm:leading-10"
-      >
+      <p className="text-md w-full text-center leading-6 sm:leading-10 md:text-lg">
         Aspiring software engineer dedicated to learning and mastering
         innovative technologies.
       </p>
-      <div className="flex gap-6 items-center mb-12">
-        <Button
-          classes="bg-custom-gradient rounded-[50px] px-5 py-3 text-sm
-          hover:border-2  sm:px-10 py-5 font-semibold
-        "
-        >
+      <div className="mb-12 flex items-center gap-6">
+        <Button className="hover:ring-foreground rounded-lg bg-custom-gradient px-5 py-4 text-sm font-semibold ring-2 ring-inset ring-transparent transition-all sm:px-10">
           Contact me
         </Button>
-
-        <Button classes="border-2 rounded-[50px] px-5 py-3 text-sm  hover:border-[#00BFFF] sm:px-10 py-5 flex  gap-2 items-center font-semibold ">
-          Resume <VerticalAlignBottomOutlinedIcon />
+        <Button className="hover:ring-accent ring-foreground flex items-center gap-2 rounded-lg px-5 py-4 text-sm font-semibold ring-2 ring-inset transition-all sm:px-10">
+          <span>Resume</span>
+          <Download className="h-5 w-5" />
         </Button>
       </div>
     </div>
-  );
+  )
 }
-
-export default Hero;

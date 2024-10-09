@@ -1,12 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary: 211 100% 50%;
+  --secondary: 167 59% 57%;
+  --accent: 195 100% 50%;
+  --background: 0 0% 90%;
+  --foreground: 0 0% 0%;
+}
+.dark {
+  --primary: 211 100% 50%;
+  --secondary: 167 59% 57%;
+  --accent: 195 100% 50%;
+  --background: 40 7% 8%;
+  --foreground: 0 0% 100%;
+}
+
 body {
-  font-family: "Outfit", serif;
-  min-height: 100vh;
-  background: #161513;
-  color: #fff;
+  @apply bg-background text-foreground flex min-h-screen flex-col;
+  font-family: 'Outfit', serif;
 }
