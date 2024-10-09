@@ -1,11 +1,10 @@
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 /*import DarkModeIcon from "@mui/icons-material/DarkMode";*/
 import MenuIcon from "@mui/icons-material/Menu";
-import Button from "./Button.tsx";
 
 function Navbar() {
   return (
-    <div className="flex justify-between lg:justify-around items-center p-4 mb-7 ">
+    <div className="flex justify-between lg:justify-evenly items-center p-4 mb-7  lg:w-[90%] ">
       {/* Logo */}
       <div className=" flex items-center">
         <span className="text-4xl font-bold leading-tight tracking-wide hover:bg-gradient-to-r from-[#007BFF] to-[#52D3B8] hover:bg-clip-text hover:text-transparent transition duration-300 ease-in-out">
@@ -16,7 +15,7 @@ function Navbar() {
         </span>
       </div>
 
-      <nav className="hidden  lg:block">
+      <nav className="hidden  md:block">
         <ul className="flex gap-8 justify-center">
           <li>
             <a
@@ -31,7 +30,7 @@ function Navbar() {
               className="hover:bg-gradient-to-r from-[#007BFF] to-[#52D3B8] hover:bg-clip-text hover:text-transparent text-xl"
               href="#about"
             >
-              About
+              About Me
             </a>
           </li>
           <li>
@@ -47,7 +46,7 @@ function Navbar() {
               className="hover:bg-gradient-to-r from-[#007BFF] to-[#52D3B8] hover:bg-clip-text hover:text-transparent text-xl"
               href="#contact"
             >
-              Contact
+              Contact Me
             </a>
           </li>
         </ul>
@@ -59,15 +58,12 @@ function Navbar() {
           <WbSunnyIcon />
         </div>
 
-        <div className=" sm:block lg:hidden ">
+        <div className=" sm:block md:hidden ">
           <MenuIcon />
         </div>
         {/* <button>
           <DarkModeIcon />
         </button> */}
-        <Button classes="bg-custom-gradient rounded-[50px] px-6 py-3 text-md hidden md:block hover:border-2">
-          Connect With Me
-        </Button>
       </div>
     </div>
   );

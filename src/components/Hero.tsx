@@ -3,7 +3,7 @@ import Button from "./Button.tsx";
 import VerticalAlignBottomOutlinedIcon from "@mui/icons-material/VerticalAlignBottomOutlined";
 function Hero() {
   return (
-    <div className="flex flex-col gap-9 items-center">
+    <div className="flex flex-col gap-9 items-center w-screen">
       <img
         src={profileImg}
         alt="pesonal-picture"
@@ -33,7 +33,7 @@ function Hero() {
           hover:border-2  sm:px-10 py-5 font-semibold
         "
         >
-          Connect With Me
+          Contact me
         </Button>
 
         <Button classes="border-2 rounded-[50px] px-5 py-3 text-sm  hover:border-[#00BFFF] sm:px-10 py-5 flex  gap-2 items-center font-semibold ">
