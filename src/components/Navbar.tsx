@@ -1,10 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Menu, Moon, Sun } from 'lucide-react'
-import { useTheme } from './theme-provider'
 
 function Navbar() {
-  const { theme, setTheme } = useTheme()
-
   return (
     <div className="mb-7 flex items-center justify-between p-4 lg:w-[90%] lg:justify-evenly">
       {/* Logo */}
@@ -56,14 +53,8 @@ function Navbar() {
 
       {/* Buttons (Light/Dark mode and Connect) */}
       <div className="flex items-center gap-4">
-        <button
-          onClick={() =>
-            theme === 'light' ? setTheme('dark') : setTheme('light')
-          }
-        >
-          {theme === 'light' ?
-            <Moon />
-          : <Sun />}
+        <button>
+          <Sun />
         </button>
 
         <div className="sm:block md:hidden">
