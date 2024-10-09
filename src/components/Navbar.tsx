@@ -8,10 +8,10 @@ function Navbar() {
     <div className="flex justify-between lg:justify-around items-center p-4 mb-7 ">
       {/* Logo */}
       <div className=" flex items-center">
-        <span className="text-4xl font-bold leading-tight tracking-wide hover:bg-gradient-to-r from-[#DF8908] to-[#B415FF] hover:bg-clip-text hover:text-transparent transition duration-300 ease-in-out">
+        <span className="text-4xl font-bold leading-tight tracking-wide hover:bg-gradient-to-r from-[#007BFF] to-[#52D3B8] hover:bg-clip-text hover:text-transparent transition duration-300 ease-in-out">
           Taha
         </span>
-        <span className="text-4xl font-bold leading-tight tracking-wide hover:bg-gradient-to-r from-[#DF8908] to-[#B415FF] hover:bg-clip-text hover:text-transparent transition duration-300 ease-in-out">
+        <span className="text-4xl font-bold leading-tight tracking-wide hover:bg-gradient-to-r from-[#007BFF] to-[#52D3B8] hover:bg-clip-text hover:text-transparent transition duration-300 ease-in-out">
           Zoabi
         </span>
       </div>
@@ -20,7 +20,7 @@ function Navbar() {
         <ul className="flex gap-8 justify-center">
           <li>
             <a
-              className="hover:bg-gradient-to-r from-[#DF8908] to-[#B415FF] hover:bg-clip-text hover:text-transparent text-xl"
+              className="hover:bg-gradient-to-r from-[#007BFF] to-[#52D3B8] hover:bg-clip-text hover:text-transparent text-xl"
               href="#home"
             >
               Home
@@ -28,7 +28,7 @@ function Navbar() {
           </li>
           <li>
             <a
-              className="hover:bg-gradient-to-r from-[#DF8908] to-[#B415FF] hover:bg-clip-text hover:text-transparent text-xl"
+              className="hover:bg-gradient-to-r from-[#007BFF] to-[#52D3B8] hover:bg-clip-text hover:text-transparent text-xl"
               href="#about"
             >
               About
@@ -36,7 +36,7 @@ function Navbar() {
           </li>
           <li>
             <a
-              className="hover:bg-gradient-to-r from-[#DF8908] to-[#B415FF] hover:bg-clip-text hover:text-transparent text-xl"
+              className="hover:bg-gradient-to-r from-[#007BFF] to-[#52D3B8] hover:bg-clip-text hover:text-transparent text-xl"
               href="#projects"
             >
               Projects
@@ -44,7 +44,7 @@ function Navbar() {
           </li>
           <li>
             <a
-              className="hover:bg-gradient-to-r from-[#DF8908] to-[#B415FF] hover:bg-clip-text hover:text-transparent text-xl"
+              className="hover:bg-gradient-to-r from-[#007BFF] to-[#52D3B8] hover:bg-clip-text hover:text-transparent text-xl"
               href="#contact"
             >
               Contact
@@ -65,7 +65,7 @@ function Navbar() {
         {/* <button>
           <DarkModeIcon />
         </button> */}
-        <Button classes="bg-custom-gradient rounded-[50px] px-6 py-3 text-md hidden md:block">
+        <Button classes="bg-custom-gradient rounded-[50px] px-6 py-3 text-md hidden md:block hover:border-2">
           Connect With Me
         </Button>
       </div>
