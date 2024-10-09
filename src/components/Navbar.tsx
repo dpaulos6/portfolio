@@ -1,25 +1,27 @@
-import WbSunnyIcon from "@mui/icons-material/WbSunny";
-/*import DarkModeIcon from "@mui/icons-material/DarkMode";*/
-import MenuIcon from "@mui/icons-material/Menu";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { Menu, Moon, Sun } from 'lucide-react'
+import { useTheme } from './theme-provider'
 
 function Navbar() {
+  const { theme, setTheme } = useTheme()
+
   return (
-    <div className="flex justify-between lg:justify-evenly items-center p-4 mb-7  lg:w-[90%] ">
+    <div className="mb-7 flex items-center justify-between p-4 lg:w-[90%] lg:justify-evenly">
       {/* Logo */}
-      <div className=" flex items-center">
-        <span className="text-4xl font-bold leading-tight tracking-wide hover:bg-gradient-to-r from-[#007BFF] to-[#52D3B8] hover:bg-clip-text hover:text-transparent transition duration-300 ease-in-out">
+      <div className="flex items-center">
+        <span className="from-primary to-secondary text-4xl font-bold leading-tight tracking-wide transition duration-300 ease-in-out hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent">
           Taha
         </span>
-        <span className="text-4xl font-bold leading-tight tracking-wide hover:bg-gradient-to-r from-[#007BFF] to-[#52D3B8] hover:bg-clip-text hover:text-transparent transition duration-300 ease-in-out">
+        <span className="from-primary to-secondary text-4xl font-bold leading-tight tracking-wide transition duration-300 ease-in-out hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent">
           Zoabi
         </span>
       </div>
 
-      <nav className="hidden  md:block">
-        <ul className="flex gap-8 justify-center">
+      <nav className="hidden md:block">
+        <ul className="flex justify-center gap-8">
           <li>
             <a
-              className="hover:bg-gradient-to-r from-[#007BFF] to-[#52D3B8] hover:bg-clip-text hover:text-transparent text-xl"
+              className="from-primary to-secondary text-xl hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent"
               href="#home"
             >
               Home
@@ -27,7 +29,7 @@ function Navbar() {
           </li>
           <li>
             <a
-              className="hover:bg-gradient-to-r from-[#007BFF] to-[#52D3B8] hover:bg-clip-text hover:text-transparent text-xl"
+              className="from-primary to-secondary text-xl hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent"
               href="#about"
             >
               About Me
@@ -35,7 +37,7 @@ function Navbar() {
           </li>
           <li>
             <a
-              className="hover:bg-gradient-to-r from-[#007BFF] to-[#52D3B8] hover:bg-clip-text hover:text-transparent text-xl"
+              className="from-primary to-secondary text-xl hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent"
               href="#projects"
             >
               Projects
@@ -43,7 +45,7 @@ function Navbar() {
           </li>
           <li>
             <a
-              className="hover:bg-gradient-to-r from-[#007BFF] to-[#52D3B8] hover:bg-clip-text hover:text-transparent text-xl"
+              className="from-primary to-secondary text-xl hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent"
               href="#contact"
             >
               Contact Me
@@ -54,19 +56,22 @@ function Navbar() {
 
       {/* Buttons (Light/Dark mode and Connect) */}
       <div className="flex items-center gap-4">
-        <div>
-          <WbSunnyIcon />
-        </div>
+        <button
+          onClick={() =>
+            theme === 'light' ? setTheme('dark') : setTheme('light')
+          }
+        >
+          {theme === 'light' ?
+            <Moon />
+          : <Sun />}
+        </button>
 
-        <div className=" sm:block md:hidden ">
-          <MenuIcon />
+        <div className="sm:block md:hidden">
+          <Menu />
         </div>
-        {/* <button>
-          <DarkModeIcon />
-        </button> */}
       </div>
     </div>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar
