@@ -8,18 +8,19 @@
   --primary: 211 100% 50%;
   --secondary: 167 59% 57%;
   --accent: 195 100% 50%;
-  --background: 0 0% 90%;
-  --foreground: 0 0% 0%;
-}
-.dark {
-  --primary: 211 100% 50%;
-  --secondary: 167 59% 57%;
-  --accent: 195 100% 50%;
   --background: 40 7% 8%;
   --foreground: 0 0% 100%;
 }
 
+.light {
+  --primary: 211 100% 50%;
+  --secondary: 167 59% 57%;
+  --accent: 195 100% 50%;
+  --background: 0 0% 90%;
+  --foreground: 0 0% 0%;
+}
+
 body {
-  @apply bg-background text-foreground flex min-h-screen flex-col;
+  @apply bg-background text-foreground flex min-h-screen flex-col overflow-x-hidden;
   font-family: 'Outfit', serif;
 }
