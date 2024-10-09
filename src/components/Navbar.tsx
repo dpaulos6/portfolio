@@ -5,11 +5,7 @@ import Button from "./Button.tsx";
 
 function Navbar() {
   return (
-<<<<<<< HEAD
     <div className="flex justify-between lg:justify-around items-center p-4 mb-7 ">
-=======
-    <div className="flex justify-around items-center p-4 mb-7">
->>>>>>> c80df830a256ce03dab56b057d256b25ec008208
       {/* Logo */}
       <div className=" flex items-center">
         <span className="text-4xl font-bold leading-tight tracking-wide hover:bg-gradient-to-r from-[#DF8908] to-[#B415FF] hover:bg-clip-text hover:text-transparent transition duration-300 ease-in-out">
@@ -20,11 +16,7 @@ function Navbar() {
         </span>
       </div>
 
-<<<<<<< HEAD
       <nav className="hidden  lg:block">
-=======
-      <nav className="hidden sm:block mx-auto">
->>>>>>> c80df830a256ce03dab56b057d256b25ec008208
         <ul className="flex gap-8 justify-center">
           <li>
             <a
@@ -66,11 +58,8 @@ function Navbar() {
         <div>
           <WbSunnyIcon />
         </div>
-<<<<<<< HEAD
+
         <div className=" sm:block lg:hidden ">
-=======
-        <div className="md:hidden">
->>>>>>> c80df830a256ce03dab56b057d256b25ec008208
           <MenuIcon />
         </div>
         {/* <button>
