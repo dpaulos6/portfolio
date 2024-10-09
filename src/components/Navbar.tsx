@@ -1,11 +1,12 @@
 import logo from "../../public/logo.png";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
-import DarkModeIcon from "@mui/icons-material/DarkMode";
+/*import DarkModeIcon from "@mui/icons-material/DarkMode";*/
 import MenuIcon from "@mui/icons-material/Menu";
+import Button from "./Button.tsx";
 
 function Navbar() {
   return (
-    <div className="flex justify-between items-center p-4 mb-7">
+    <div className="flex justify-around items-center p-4 mb-7">
       {/* Logo */}
       <div className="flex items-center">
         <img
@@ -15,8 +16,8 @@ function Navbar() {
         />
       </div>
 
-      <nav className="hidden sm:block">
-        <ul className="flex gap-6 justify-center">
+      <nav className="hidden sm:block mx-auto">
+        <ul className="flex gap-8 justify-center">
           <li>
             <a
               className="hover:bg-gradient-to-r from-[#DF8908] to-[#B415FF] hover:bg-clip-text hover:text-transparent text-xl"
@@ -54,18 +55,18 @@ function Navbar() {
 
       {/* Buttons (Light/Dark mode and Connect) */}
       <div className="flex items-center gap-4">
-        <button className="md:hidden">
-          <MenuIcon />
-        </button>
-        <button>
+        <div>
           <WbSunnyIcon />
-        </button>
+        </div>
+        <div className="md:hidden">
+          <MenuIcon />
+        </div>
         {/* <button>
           <DarkModeIcon />
         </button> */}
-        <button className="bg-custom-gradient rounded-[50px] px-6 py-3 text-md hidden md:block">
+        <Button classes="bg-custom-gradient rounded-[50px] px-6 py-3 text-md hidden md:block">
           Connect With Me
-        </button>
+        </Button>
       </div>
     </div>
   );
