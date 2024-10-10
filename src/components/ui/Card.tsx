@@ -8,11 +8,12 @@ interface ProjectProps {
 
 const Card: React.FC<ProjectProps> = ({ project }) => {
   return (
-    <div className="bg-input group relative flex h-fit min-h-80 w-full flex-col overflow-hidden rounded-xl border-2 shadow-md">
+    <div className="group relative flex h-fit min-h-80 w-full flex-col overflow-hidden rounded-xl border-2 bg-input shadow-md">
       {project.link && (
         <a
           href={project.link}
-          className="bg-input hover:bg-border absolute right-2 top-2 z-10 rounded-full p-2 transition md:pointer-events-none md:opacity-0 md:group-hover:pointer-events-auto md:group-hover:opacity-100"
+          target={'_blank'}
+          className="absolute right-2 top-2 z-10 rounded-full bg-input p-2 transition hover:bg-border md:pointer-events-none md:opacity-0 md:group-hover:pointer-events-auto md:group-hover:opacity-100"
         >
           <Github className="h-5 w-5" />
         </a>
