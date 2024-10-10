@@ -1,45 +1,40 @@
-import portfolioImg from '../../public/portfolio.png'
-import phoneBookImg from '../../public/phone-book.png'
-import quizImg from '../../public/java-quiz.png'
-import todoImg from '../../public/java-todo.png'
-
-type Project = {
-  id: number
-  title: string
-  description: string
-  img: string
-  sourceCode: string
-}
+import portfolioImg from '/portfolio.png'
+import phoneBookImg from '/phone-book.png'
+import quizImg from '/java-quiz.png'
+import todoImg from '/java-todo.png'
+import { Project } from '../interfaces/projects'
 
 export const ProjectsData: Project[] = [
   {
     id: 1,
     title: 'Portfolio',
-    description: 'A personal portfolio showcasing my projects and skills.',
+    description:
+      'A personal portfolio showcasing my projects, skills, and experience, with a clean, responsive design.',
     img: portfolioImg,
-    sourceCode: 'https://github.com/TahaZoabi/portfolio'
+    link: 'https://github.com/TahaZoabi/portfolio'
   },
   {
     id: 2,
     title: 'Phone-Book',
-    description: 'A user-friendly phone book application to manage contacts.',
+    description:
+      'A simple phone book app for managing contacts, featuring options to add, edit, and delete entries.',
     img: phoneBookImg,
-    sourceCode: 'https://github.com/TahaZoabi/Phone-Book-V2'
+    link: 'https://github.com/TahaZoabi/Phone-Book-V2'
   },
   {
     id: 3,
     title: 'Java Quiz-App',
     description:
-      'An interactive quiz application to test your knowledge on various topics.',
+      'An interactive quiz app built with Java to test knowledge on various topics, with scoring and timer features.',
     img: quizImg,
-    sourceCode: 'https://github.com/TahaZoabi/Quiz-Application'
+    link: 'https://github.com/TahaZoabi/Quiz-Application'
   },
   {
     id: 4,
     title: 'Java Todo-List',
     description:
-      'A simple yet effective todo list application for task management.',
+      'A basic task management app to create, edit, and track tasks, designed to keep you organized.',
     img: todoImg,
-    sourceCode: 'https://github.com/TahaZoabi/JAVA-TODO'
+    link: 'https://github.com/TahaZoabi/JAVA-TODO'
   }
 ]
