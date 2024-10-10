@@ -1,4 +1,4 @@
-import Title from './Title.tsx'
+import Title from './ui/Title.tsx'
 import { ProjectsData } from '../lib/projectsData.ts'
 import Card from './ui/Card.tsx'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'

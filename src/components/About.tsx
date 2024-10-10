@@ -1,4 +1,4 @@
-import Title from './Title.tsx'
+import Title from './ui/Title.tsx'
 import pic from '../assets/pic.jpg'
 function About() {
   return (
