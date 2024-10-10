@@ -2,6 +2,7 @@ import Header from './components/Header.tsx'
 import Hero from './components/Hero.tsx'
 import About from './components/About.tsx'
 import { ThemeProvider } from './lib/theme-provider.tsx'
+import Projects from './components/Projects.tsx'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Header />
       <Hero />
       <About />
+      <Projects />
     </ThemeProvider>
   )
 }
