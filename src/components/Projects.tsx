@@ -9,8 +9,8 @@ function Projects() {
       <div className="flex items-center justify-center gap-4">
         <Title>Projects</Title>
       </div>
-      <div className="mx-auto mb-16 max-w-2xl">
-        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2 }}>
+      <div className="mx-auto mb-16 max-w-sm px-4 md:max-w-2xl">
+        <ResponsiveMasonry columnsCountBreakPoints={{ 0: 1, 768: 2 }}>
           <Masonry
             gutter="1rem"
             className={

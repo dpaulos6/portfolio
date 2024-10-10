@@ -1,24 +1,24 @@
-import Title from "./Title.tsx";
-import pic from "../assets/pic.jpg";
+import Title from './Title.tsx'
+import pic from '../assets/pic.jpg'
 function About() {
   return (
     <>
       <Title>About Me</Title>
-      <div className={"flex flex-col gap-6 justify-center md:flex-row  p-4"}>
+      <div className={'flex flex-col justify-center gap-6 p-4 md:flex-row'}>
         <div>
           <img
             src={pic}
             alt="personal-picture"
-            className={" w-[90%] md:w-[450px] rounded-lg mx-auto"}
+            className={'mx-auto w-[90%] rounded-lg md:w-[450px]'}
           />
         </div>
-        <div className={"flex flex-col  w-full md:w-[50%] gap-3 "}>
-          <p className={"text-2xl my-3"}>
+        <div className={'flex w-full flex-col gap-3 md:w-[50%]'}>
+          <p className={'my-3 text-2xl'}>
             Hello! I'm Taha Zoabi, a 25-year-old software engineering student
             with a passion for technology and a strong desire to grow as a
             developer.
           </p>
-          <p className={"text-2xl my-3"}>
+          <p className={'my-3 text-2xl'}>
             I thrive on the challenge of learning new programming languages and
             tools, always eager to tackle the next project that pushes my skills
             to the limit. My journey in tech has been both exciting and
@@ -26,9 +26,8 @@ function About() {
           </p>
         </div>
       </div>
-      ;
     </>
-  );
+  )
 }
 
-export default About;
+export default About

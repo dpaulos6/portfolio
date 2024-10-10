@@ -12,7 +12,7 @@ const Card: React.FC<ProjectProps> = ({ project }) => {
       {project.link && (
         <a
           href={project.link}
-          className="bg-input hover:bg-border pointer-events-none absolute right-2 top-2 z-10 rounded-full p-2 opacity-0 transition group-hover:pointer-events-auto group-hover:opacity-100"
+          className="bg-input hover:bg-border absolute right-2 top-2 z-10 rounded-full p-2 transition md:pointer-events-none md:opacity-0 md:group-hover:pointer-events-auto md:group-hover:opacity-100"
         >
           <Github className="h-5 w-5" />
         </a>
