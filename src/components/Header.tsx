@@ -1,6 +1,6 @@
 import { Menu, Moon, Sun } from 'lucide-react'
 import { useTheme } from '../lib/theme-provider.tsx'
-import { Button } from './ui/Button.tsx'
+import { ThemeButton } from './ui/ThemeButton.tsx'
 import { DropdownMenu, DropdownMenuTrigger } from './ui/DropDownMenu.tsx'
 
 function Header() {
@@ -58,7 +58,7 @@ function Header() {
       <div className={'flex items-center justify-center gap-3'}>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button
+            <ThemeButton
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
               variant="outline"
               size="icon"
@@ -68,7 +68,7 @@ function Header() {
               : <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
               }
               <span className="sr-only">Toggle theme</span>
-            </Button>
+            </ThemeButton>
           </DropdownMenuTrigger>
         </DropdownMenu>
 
