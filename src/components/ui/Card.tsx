@@ -1,36 +1,35 @@
+import { Github } from 'lucide-react'
 import React from 'react'
+import { Project } from '../../interfaces/projects'
 
-interface CardProps {
-  imageUrl: string
-  title: string
-  description: string
-  link: string
+interface ProjectProps {
+  project: Project
 }
 
-const Card: React.FC<CardProps> = ({ imageUrl, title, description, link }) => {
+const Card: React.FC<ProjectProps> = ({ project }) => {
   return (
-    <div className="flex h-auto w-full flex-col overflow-hidden rounded-lg border-2 bg-gray-800 text-white shadow-md md:h-[300px] md:w-[60%] md:flex-row">
-      <div className="h-48 flex-shrink-0 overflow-hidden md:w-1/2">
+    <div className="bg-input group relative flex h-fit min-h-80 w-full flex-col overflow-hidden rounded-xl border-2 shadow-md">
+      {project.link && (
+        <a
+          href={project.link}
+          className="bg-input hover:bg-border pointer-events-none absolute right-2 top-2 z-10 rounded-full p-2 opacity-0 transition group-hover:pointer-events-auto group-hover:opacity-100"
+        >
+          <Github className="h-5 w-5" />
+        </a>
+      )}
+      <div className="relative h-52 w-full overflow-hidden">
+        {/* <div className="absolute bottom-0 left-0 z-10 w-full h-16 from-input bg-gradient-to-t"></div> */}
         <img
-          className="h-full w-full object-cover"
-          src={imageUrl}
-          alt={title}
+          className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+          src={project.img}
+          alt={project.title}
         />
       </div>
-
-      <div className="flex flex-col justify-between p-4 md:w-1/2">
-        <div>
-          <div className="mb-2 text-lg font-bold">{title}</div>
-          <p className="text-sm">{description}</p>
+      <div className="z-10 flex h-full flex-col justify-between p-4">
+        <div className="mb-2 line-clamp-1 text-xl font-bold">
+          {project.title}
         </div>
-        <div className="mt-auto">
-          <a
-            href={link}
-            className="text-primary hover:text-accent"
-          >
-            Source Code
-          </a>
-        </div>
+        <p className="line-clamp-5 text-lg">{project.description}</p>
       </div>
     </div>
   )
