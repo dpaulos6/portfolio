@@ -1,21 +1,18 @@
 import Title from './ui/Title.tsx'
 import Button from './ui/Button.tsx'
+import Footer from './ui/Footer.tsx'
 
 function Contact() {
   return (
     <>
       <Title>Contact Me</Title>
-      <div
-        className={
-          'flex h-[500px] items-start justify-evenly gap-2 border-2 p-3'
-        }
-      >
-        <div className={'h-full w-1/4 border-2 text-center'}>
+      <div className={'flex h-[500px] items-start justify-evenly gap-2 p-3'}>
+        <div className={'h-full w-1/4 text-center'}>
           <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-2xl text-transparent">
             Let's Connect
           </span>
         </div>
-        <div className={'h-full w-1/2 border-4'}>
+        <div className={'h-full w-1/2'}>
           <form className={'flex flex-col items-center gap-5 p-4'}>
             <label>
               Name:
@@ -53,6 +50,7 @@ function Contact() {
           </form>
         </div>
       </div>
+      <Footer />
     </>
   )
 }
