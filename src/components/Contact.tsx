@@ -5,14 +5,36 @@ import { Mail, Phone, MapPin } from 'lucide-react'
 import { Input } from './ui/Input.tsx'
 import { Textarea } from './ui/TextArea.tsx'
 import { Alert, AlertDescription, AlertTitle } from './ui/Alert.tsx'
-import { useState } from 'react'
+import React, { useState } from 'react'
 
 function Contact() {
   const [showAlert, setShowAlert] = useState(false)
-  function handleSubmit(e) {
-    e.preventDefault()
-    setShowAlert(true)
-    setTimeout(() => setShowAlert(false), 3000)
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    const formData = new FormData(event.target)
+
+    formData.append('access_key', 'd2855961-b6a6-43a9-b17b-3dbaf56f446a')
+
+    const object = Object.fromEntries(formData)
+    const json = JSON.stringify(object)
+
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      body: json
+    }).then((res) => res.json())
+
+    if (res.success) {
+      console.log('Success', res)
+    }
+    setShowAlert((prevState) => !prevState)
+    setTimeout(() => setShowAlert((prevState) => !prevState), 3000)
   }
 
   return (
