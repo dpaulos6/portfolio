@@ -4,8 +4,17 @@ import Footer from './ui/Footer.tsx'
 import { Mail, Phone, MapPin } from 'lucide-react'
 import { Input } from './ui/Input.tsx'
 import { Textarea } from './ui/TextArea.tsx'
+import { Alert, AlertDescription, AlertTitle } from './ui/Alert.tsx'
+import { useState } from 'react'
 
 function Contact() {
+  const [showAlert, setShowAlert] = useState(false)
+  function handleSubmit(e) {
+    e.preventDefault()
+    setShowAlert(true)
+    setTimeout(() => setShowAlert(false), 3000)
+  }
+
   return (
     <>
       <Title>Contact Me</Title>
@@ -36,7 +45,10 @@ function Contact() {
             </div>
           </div>
           <div className="flex w-full flex-col lg:w-2/4">
-            <form className="flex flex-col items-center gap-5 p-4">
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col items-center gap-5 p-4"
+            >
               <div className="flex w-full flex-col gap-4">
                 <label className="flex flex-col gap-2">
                   Your Name
@@ -70,6 +82,16 @@ function Contact() {
               <Button className="w-full rounded-lg bg-custom-gradient px-5 py-4 text-sm font-semibold ring-2 ring-inset ring-transparent transition-all hover:ring-foreground sm:px-10 lg:w-1/4">
                 Send
               </Button>
+              {showAlert && (
+                <Alert
+                  className={
+                    'fixed left-1/2 top-5 z-10 -translate-x-1/2 transform'
+                  }
+                >
+                  <AlertTitle>Notification!</AlertTitle>
+                  <AlertDescription>Email Sent Successfully!</AlertDescription>
+                </Alert>
+              )}
             </form>
           </div>
         </div>
