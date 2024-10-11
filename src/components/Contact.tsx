@@ -75,7 +75,7 @@ function Contact() {
               className="flex flex-col items-center gap-5 p-4"
             >
               <div className="flex w-full flex-col gap-4">
-                <label className="flex flex-col gap-2">
+                <label className="flex flex-col gap-2 shadow-md">
                   Your Name
                   <Input
                     type={'text'}
@@ -84,7 +84,7 @@ function Contact() {
                     required
                   />
                 </label>
-                <label className="flex flex-col gap-2">
+                <label className="flex flex-col gap-2 shadow-md">
                   Your Email
                   <Input
                     type={'email'}
@@ -93,7 +93,7 @@ function Contact() {
                     required
                   />
                 </label>
-                <label className="flex flex-col gap-2">
+                <label className="flex flex-col gap-2 shadow-md">
                   Write your message here
                   <Textarea
                     rows={8}
