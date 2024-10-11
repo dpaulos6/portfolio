@@ -7,20 +7,36 @@ function Footer() {
         <hr className="h-1 border-0 bg-gradient-to-r from-primary to-secondary" />
       </div>
 
-      <div className={'flex items-center justify-evenly p-4'}>
-        <span className={'text-xl'}>
-          &#169; Taha Zoabi. All Rights Reserved.{' '}
+      <div
+        className={
+          'flex flex-col items-center justify-evenly gap-4 p-4 md:flex-row'
+        }
+      >
+        <span className={'text-md sm:text-lg md:text-xl'}>
+          &#169; Taha Zoabi. All Rights Reserved.
         </span>
         <div>
           <ul className={'flex gap-4'}>
-            <li>
-              <Github />
+            <li className={'hover:text-accent'}>
+              <a
+                target={'_blank'}
+                href="https://github.com/TahaZoabi"
+              >
+                <Github />
+              </a>
             </li>
-            <li>
-              <Linkedin />
+            <li className={'hover:text-accent'}>
+              <a
+                target={'_blank'}
+                href="https://www.linkedin.com/in/tahazoabi/"
+              >
+                <Linkedin />
+              </a>
             </li>
-            <li>
-              <Mail />
+            <li className={'hover:text-accent'}>
+              <a href="mailto:range.dev7@gmail.com">
+                <Mail />
+              </a>
             </li>
           </ul>
         </div>
