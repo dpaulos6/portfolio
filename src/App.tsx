@@ -3,6 +3,7 @@ import Hero from './components/Hero.tsx'
 import About from './components/About.tsx'
 import { ThemeProvider } from './lib/theme-provider.tsx'
 import Projects from './components/Projects.tsx'
+import Contact from './components/Contact.tsx'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Hero />
       <About />
       <Projects />
+      <Contact />
     </ThemeProvider>
   )
 }
