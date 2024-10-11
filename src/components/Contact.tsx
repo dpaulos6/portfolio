@@ -40,7 +40,10 @@ function Contact() {
   return (
     <>
       <Title>Contact Me</Title>
-      <div className="flex flex-col items-center justify-center p-3 md:flex-row md:items-start">
+      <div
+        id={'contact'}
+        className="flex flex-col items-center justify-center p-3 md:flex-row md:items-start"
+      >
         <div className="flex w-full flex-col justify-around gap-5 p-3 lg:flex-row">
           <div className="flex w-full flex-col gap-3 lg:w-1/3">
             <p className="bg-gradient-to-r from-primary to-secondary bg-clip-text p-2 text-center text-4xl text-transparent lg:text-start">

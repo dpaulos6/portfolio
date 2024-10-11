@@ -2,6 +2,9 @@ import { Menu, Moon, Sun } from 'lucide-react'
 import { useTheme } from '../lib/theme-provider.tsx'
 import { ThemeButton } from './ui/ThemeButton.tsx'
 import { DropdownMenu, DropdownMenuTrigger } from './ui/DropDownMenu.tsx'
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 function Header() {
   const { theme, setTheme } = useTheme()
@@ -20,36 +23,32 @@ function Header() {
       <nav className="hidden md:block">
         <ul className="flex justify-center gap-8">
           <li>
-            <a
-              className="from-primary to-secondary text-xl hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent"
-              href="#home"
-            >
-              Home
-            </a>
+            <AnchorLink href="#home">
+              <p className="from-primary to-secondary text-xl hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent">
+                Home
+              </p>
+            </AnchorLink>
           </li>
           <li>
-            <a
-              className="from-primary to-secondary text-xl hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent"
-              href="#about"
-            >
-              About Me
-            </a>
+            <AnchorLink href="#about">
+              <p className="from-primary to-secondary text-xl hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent">
+                About Me
+              </p>
+            </AnchorLink>
           </li>
           <li>
-            <a
-              className="from-primary to-secondary text-xl hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent"
-              href="#projects"
-            >
-              Projects
-            </a>
+            <AnchorLink href="#projects">
+              <p className="from-primary to-secondary text-xl hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent">
+                Projects
+              </p>
+            </AnchorLink>
           </li>
           <li>
-            <a
-              className="from-primary to-secondary text-xl hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent"
-              href="#contact"
-            >
-              Contact Me
-            </a>
+            <AnchorLink href="#contact">
+              <p className="from-primary to-secondary text-xl hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent">
+                Contact Me
+              </p>
+            </AnchorLink>
           </li>
         </ul>
       </nav>

@@ -4,7 +4,10 @@ import Button from './ui/Button.tsx'
 
 export default function Hero() {
   return (
-    <div className="flex w-screen flex-col items-center gap-9 px-4">
+    <div
+      id={'home'}
+      className="flex w-screen flex-col items-center gap-9 px-4"
+    >
       <img
         src={profileImg}
         alt="pesonal-picture"

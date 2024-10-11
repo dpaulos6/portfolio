@@ -6,7 +6,10 @@ import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 function Projects() {
   return (
     <>
-      <div className="flex items-center justify-center gap-4">
+      <div
+        id={'projects'}
+        className="flex items-center justify-center gap-4"
+      >
         <Title>Projects</Title>
       </div>
       <div className="mx-auto mb-16 max-w-sm px-4 md:max-w-2xl">

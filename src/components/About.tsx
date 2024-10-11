@@ -2,7 +2,7 @@ import Title from './ui/Title.tsx'
 import pic from '../assets/pic.jpg'
 function About() {
   return (
-    <>
+    <div id={'about'}>
       <Title>About Me</Title>
       <div className={'flex flex-col justify-center gap-6 p-4 md:flex-row'}>
         <div>
@@ -26,7 +26,7 @@ function About() {
           </p>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
