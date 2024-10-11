@@ -62,6 +62,7 @@ function Header() {
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
               variant="outline"
               size="icon"
+              className={'hover:text-accent'}
             >
               {theme === 'dark' ?
                 <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
