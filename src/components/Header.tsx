@@ -39,28 +39,40 @@ function Header() {
             className={`flex ${isMenuOpen ? 'absolute left-10 top-5 flex-col justify-end gap-4 bg-background p-4 shadow-md md:hidden' : 'justify-center gap-8'}`}
           >
             <li>
-              <AnchorLink href="#home">
+              <AnchorLink
+                href="#home"
+                onClick={closeMenu}
+              >
                 <p className="from-primary to-secondary text-xl hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent">
                   Home
                 </p>
               </AnchorLink>
             </li>
             <li>
-              <AnchorLink href="#about">
+              <AnchorLink
+                href="#about"
+                onClick={closeMenu}
+              >
                 <p className="from-primary to-secondary text-xl hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent">
                   About Me
                 </p>
               </AnchorLink>
             </li>
             <li>
-              <AnchorLink href="#projects">
+              <AnchorLink
+                href="#projects"
+                onClick={closeMenu}
+              >
                 <p className="from-primary to-secondary text-xl hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent">
                   Projects
                 </p>
               </AnchorLink>
             </li>
             <li>
-              <AnchorLink href="#contact">
+              <AnchorLink
+                href="#contact"
+                onClick={closeMenu}
+              >
                 <p className="from-primary to-secondary text-xl hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent">
                   Contact Me
                 </p>
