@@ -2,6 +2,9 @@ import Title from './ui/Title.tsx'
 import Button from './ui/Button.tsx'
 import Footer from './ui/Footer.tsx'
 import { Mail, Phone, MapPin } from 'lucide-react'
+import { Input } from './ui/Input.tsx'
+import { Textarea } from './ui/TextArea.tsx'
+
 function Contact() {
   return (
     <>
@@ -35,31 +38,31 @@ function Contact() {
           <div className="flex w-full flex-col lg:w-2/4">
             <form className="flex flex-col items-center gap-5 p-4">
               <div className="flex w-full flex-col gap-4">
-                <label className="flex flex-col">
+                <label className="flex flex-col gap-2">
                   Your Name
-                  <input
-                    type="text"
-                    name="name"
+                  <Input
+                    type={'text'}
+                    name={'name'}
+                    placeholder={'Enter your name'}
                     required
-                    className="mt-1 h-12 rounded border bg-input p-2 text-lg"
                   />
                 </label>
-                <label className="flex flex-col">
+                <label className="flex flex-col gap-2">
                   Your Email
-                  <input
-                    type="email"
-                    name="email"
+                  <Input
+                    type={'email'}
+                    name={'email'}
+                    placeholder={'Enter your email'}
                     required
-                    className="mt-1 h-12 rounded border bg-input p-2 text-lg"
                   />
                 </label>
-                <label className="flex flex-col">
+                <label className="flex flex-col gap-2">
                   Write your message here
-                  <textarea
-                    name="message"
+                  <Textarea
                     rows={8}
+                    name={'message'}
+                    placeholder={'Type your message here.'}
                     required
-                    className="mt-1 rounded border bg-input p-2 text-lg"
                   />
                 </label>
               </div>
