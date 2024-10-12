@@ -4,9 +4,15 @@ import { ThemeButton } from './ui/ThemeButton.tsx'
 
 import { Sheet, SheetContent, SheetTrigger } from './ui/Sheet.tsx'
 import Navbar from './ui/Navbar.tsx'
+import { useState } from 'react'
 
 function Header() {
   const { theme, setTheme } = useTheme()
+  const [open, setIsOpen] = useState(false)
+
+  function closeSheet() {
+    setIsOpen(false)
+  }
 
   return (
     <div className="mb-7 flex items-center justify-between p-4 lg:w-[90%] lg:justify-evenly">
@@ -38,12 +44,16 @@ function Header() {
           <span className="sr-only">Toggle theme</span>
         </ThemeButton>
 
-        <Sheet>
+        <Sheet open={open}>
           <SheetTrigger>
-            <Menu className={`hover:text-accent md:hidden`} />
+            <Menu
+              className={`hover:text-accent md:hidden`}
+              onClick={() => setIsOpen(true)}
+            />
           </SheetTrigger>
           <SheetContent className="w-[400px]">
             <Navbar
+              onNavItemClick={closeSheet}
               styleNames={'block md:hidden'}
               styleNames2={
                 'flex flex-col items-center justify-center gap-4 mt-10  p-3 '
