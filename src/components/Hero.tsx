@@ -1,6 +1,7 @@
 import { Download } from 'lucide-react'
 import profileImg from '/personal-pic.png'
 import Button from './ui/Button.tsx'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 export default function Hero() {
   return (
@@ -24,9 +25,11 @@ export default function Hero() {
         innovative technologies.
       </p>
       <div className="mb-12 flex items-center gap-6">
-        <Button className="rounded-lg bg-custom-gradient px-5 py-4 text-sm font-semibold ring-2 ring-inset ring-transparent transition-all hover:ring-foreground sm:px-10">
-          Contact me
-        </Button>
+        <AnchorLink href={'#contact'}>
+          <Button className="rounded-lg bg-custom-gradient px-5 py-4 text-sm font-semibold ring-2 ring-inset ring-transparent transition-all hover:ring-foreground sm:px-10">
+            Contact me
+          </Button>
+        </AnchorLink>
         <Button className="flex items-center gap-2 rounded-lg px-5 py-4 text-sm font-semibold ring-2 ring-inset ring-foreground transition-all hover:ring-accent sm:px-10">
           <span>Resume</span>
           <Download className="h-5 w-5" />
