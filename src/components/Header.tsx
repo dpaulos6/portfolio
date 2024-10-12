@@ -1,14 +1,14 @@
 import { Menu, Moon, Sun } from 'lucide-react'
 import { useTheme } from '../lib/theme-provider.tsx'
 import { ThemeButton } from './ui/ThemeButton.tsx'
-
+import { DialogTitle, DialogDescription } from '@radix-ui/react-dialog'
 import { Sheet, SheetContent, SheetTrigger } from './ui/Sheet.tsx'
 import Navbar from './ui/Navbar.tsx'
 import { useState } from 'react'
 
 function Header() {
   const { theme, setTheme } = useTheme()
-  const [open, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
 
   function closeSheet() {
     setIsOpen(false)
@@ -26,8 +26,8 @@ function Header() {
         </span>
       </div>
       <Navbar
-        styleNames={'hidden md:block'}
-        styleNames2={'flex justify-center gap-8'}
+        navStyles={'hidden md:block'}
+        ulStyles={'flex justify-center gap-8'}
       />
 
       <div className={'flex items-center justify-center gap-3'}>
@@ -44,18 +44,23 @@ function Header() {
           <span className="sr-only">Toggle theme</span>
         </ThemeButton>
 
-        <Sheet open={open}>
+        <Sheet
+          open={isOpen}
+          onOpenChange={setIsOpen}
+        >
           <SheetTrigger>
             <Menu
               className={`hover:text-accent md:hidden`}
               onClick={() => setIsOpen(true)}
             />
           </SheetTrigger>
-          <SheetContent className="w-[400px]">
+          <SheetContent className={`"w-[400px] md:hidden`}>
+            <DialogTitle></DialogTitle>
+            <DialogDescription></DialogDescription>
             <Navbar
+              navStyles={'block md:hidden'}
               onNavItemClick={closeSheet}
-              styleNames={'block md:hidden'}
-              styleNames2={
+              ulStyles={
                 'flex flex-col items-center justify-center gap-4 mt-10  p-3 '
               }
             />

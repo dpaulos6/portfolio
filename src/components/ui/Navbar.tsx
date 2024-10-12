@@ -2,19 +2,19 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { useRef } from 'react'
 
 type NavbarProps = {
-  styleNames: string
-  styleNames2: string
+  ulStyles: string
+  navStyles: string
   onNavItemClick?: () => void
 }
 
-function Navbar({ styleNames2, styleNames, onNavItemClick }: NavbarProps) {
+function Navbar({ ulStyles, navStyles, onNavItemClick }: NavbarProps) {
   const menuRef = useRef<HTMLUListElement>(null)
 
   return (
-    <nav className={styleNames}>
+    <nav className={navStyles}>
       <ul
         ref={menuRef}
-        className={styleNames2}
+        className={ulStyles}
       >
         <li onClick={onNavItemClick}>
           <AnchorLink href="#home">
