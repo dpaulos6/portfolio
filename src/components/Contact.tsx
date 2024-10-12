@@ -59,11 +59,11 @@ function Contact() {
                 <Mail />
                 range.dev7@gmail.com
               </p>
-              <p className="flex gap-3 p-2">
+              <p className="flex h-[39.99px] w-[223.23px] gap-3 p-2 md:h-[43.99] md:w-[260.73px]">
                 <Phone />
                 +972 054-873-4531
               </p>
-              <p className="flex gap-3 p-2">
+              <p className="flex h-[39.99px] w-[223.23px] gap-3 p-2 md:h-[43.99] md:w-[260.73px]">
                 <MapPin />
                 Nein, North District
               </p>
