@@ -1,24 +1,12 @@
-import { Menu, Moon, Sun, X } from 'lucide-react'
+import { Menu, Moon, Sun } from 'lucide-react'
 import { useTheme } from '../lib/theme-provider.tsx'
 import { ThemeButton } from './ui/ThemeButton.tsx'
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
-import AnchorLink from 'react-anchor-link-smooth-scroll'
-import { useRef, useState } from 'react'
+import { Sheet, SheetContent, SheetTrigger } from './ui/Sheet.tsx'
+import Navbar from './ui/Navbar.tsx'
 
 function Header() {
   const { theme, setTheme } = useTheme()
-  const menuRef = useRef<HTMLUListElement>(null)
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-
-  const toggleMenu = () => {
-    setIsMenuOpen((prev: boolean) => !prev)
-  }
-
-  const closeMenu = () => {
-    setIsMenuOpen(false)
-  }
 
   return (
     <div className="mb-7 flex items-center justify-between p-4 lg:w-[90%] lg:justify-evenly">
@@ -31,56 +19,11 @@ function Header() {
           Zoabi
         </span>
       </div>
+      <Navbar
+        styleNames={'hidden md:block'}
+        styleNames2={'flex justify-center gap-8'}
+      />
 
-      <div className={'relative'}>
-        <nav className={`md:block ${isMenuOpen ? 'block' : 'hidden'} md:flex`}>
-          <ul
-            ref={menuRef}
-            className={`flex ${isMenuOpen ? 'absolute left-10 top-5 flex-col justify-end gap-4 bg-background p-4 shadow-md md:hidden' : 'justify-center gap-8'}`}
-          >
-            <li>
-              <AnchorLink
-                href="#home"
-                onClick={closeMenu}
-              >
-                <p className="from-primary to-secondary text-xl hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent">
-                  Home
-                </p>
-              </AnchorLink>
-            </li>
-            <li>
-              <AnchorLink
-                href="#about"
-                onClick={closeMenu}
-              >
-                <p className="from-primary to-secondary text-xl hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent">
-                  About Me
-                </p>
-              </AnchorLink>
-            </li>
-            <li>
-              <AnchorLink
-                href="#projects"
-                onClick={closeMenu}
-              >
-                <p className="from-primary to-secondary text-xl hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent">
-                  Projects
-                </p>
-              </AnchorLink>
-            </li>
-            <li>
-              <AnchorLink
-                href="#contact"
-                onClick={closeMenu}
-              >
-                <p className="from-primary to-secondary text-xl hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent">
-                  Contact Me
-                </p>
-              </AnchorLink>
-            </li>
-          </ul>
-        </nav>
-      </div>
       <div className={'flex items-center justify-center gap-3'}>
         <ThemeButton
           onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
@@ -95,16 +38,19 @@ function Header() {
           <span className="sr-only">Toggle theme</span>
         </ThemeButton>
 
-        <Menu
-          className={`hover:text-accent md:hidden ${isMenuOpen ? 'hidden' : ''}`}
-          onClick={toggleMenu}
-        />
-        {isMenuOpen && (
-          <X
-            className="hover:text-accent md:hidden"
-            onClick={closeMenu}
-          />
-        )}
+        <Sheet>
+          <SheetTrigger>
+            <Menu className={`hover:text-accent md:hidden`} />
+          </SheetTrigger>
+          <SheetContent className="w-[400px]">
+            <Navbar
+              styleNames={'block md:hidden'}
+              styleNames2={
+                'flex flex-col items-center justify-center gap-4 mt-10  p-3 '
+              }
+            />
+          </SheetContent>
+        </Sheet>
       </div>
     </div>
   )
