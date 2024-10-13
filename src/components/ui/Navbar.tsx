@@ -16,8 +16,11 @@ function Navbar({ ulStyles, navStyles, onNavItemClick }: NavbarProps) {
         ref={menuRef}
         className={ulStyles}
       >
-        {NAV_LINKS.map((link) => (
-          <li onClick={onNavItemClick}>
+        {NAV_LINKS.map((link, index) => (
+          <li
+            onClick={onNavItemClick}
+            key={index}
+          >
             <AnchorLink href={`#${link}`}>
               <p className="from-primary to-secondary text-xl capitalize hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent">
                 {link}
