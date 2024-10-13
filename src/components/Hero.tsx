@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <div
       id={'home'}
-      className="flex w-screen flex-col items-center gap-9 px-4"
+      className="flex flex-col items-center gap-9 px-4"
     >
       <img
         src={profileImg}

@@ -15,19 +15,19 @@ function Header() {
   }
 
   return (
-    <div className="mb-7 flex items-center justify-between p-4 lg:w-[90%] lg:justify-evenly">
+    <header className="mb-7 flex items-center justify-between p-4">
       {/* Logo */}
       <div className="flex items-center">
-        <span className="from-primary to-secondary text-4xl font-bold leading-tight tracking-wide transition duration-300 ease-in-out hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent">
+        <span className="from-primary to-secondary text-3xl font-bold leading-tight tracking-wide transition duration-300 ease-in-out hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent">
           Taha
         </span>
-        <span className="from-primary to-secondary text-4xl font-bold leading-tight tracking-wide transition duration-300 ease-in-out hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent">
+        <span className="from-primary to-secondary text-3xl font-bold leading-tight tracking-wide transition duration-300 ease-in-out hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent">
           Zoabi
         </span>
       </div>
       <Navbar
-        navStyles={'hidden md:block'}
-        ulStyles={'flex justify-center gap-8'}
+        navStyles={'hidden md:block p-2 mx-auto'}
+        ulStyles={'flex justify-center gap-8  '}
       />
 
       <div className={'flex items-center justify-center gap-3'}>
@@ -67,7 +67,7 @@ function Header() {
           </SheetContent>
         </Sheet>
       </div>
-    </div>
+    </header>
   )
 }
 

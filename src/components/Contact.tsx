@@ -38,11 +38,11 @@ function Contact() {
   }
 
   return (
-    <>
+    <section>
       <Title>Contact Me</Title>
       <div
         id={'contact'}
-        className="flex flex-col items-center justify-center p-3 md:flex-row md:items-start"
+        className="flex flex-col items-center justify-center p-3 md:flex-row"
       >
         <div className="flex w-full flex-col justify-around gap-5 p-3 lg:flex-row">
           <div className="flex w-full flex-col gap-3 lg:w-1/3">
@@ -65,7 +65,7 @@ function Contact() {
               </p>
               <p className="flex h-[39.99px] w-[223.23px] gap-3 p-2 md:h-[43.99] md:w-[260.73px]">
                 <MapPin />
-                Nein, North District
+                Nein, Israel
               </p>
             </div>
           </div>
@@ -122,7 +122,7 @@ function Contact() {
         </div>
       </div>
       <Footer />
-    </>
+    </section>
   )
 }
 

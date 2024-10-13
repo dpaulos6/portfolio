@@ -2,7 +2,7 @@ import { Github, Linkedin, Mail } from 'lucide-react'
 
 function Footer() {
   return (
-    <div className={'mb-5'}>
+    <footer className={'mb-5'}>
       <div className="mx-auto my-4 w-4/6">
         <hr className="h-1 border-0 bg-gradient-to-r from-primary to-secondary" />
       </div>
@@ -41,7 +41,7 @@ function Footer() {
           </ul>
         </div>
       </div>
-    </div>
+    </footer>
   )
 }
 
