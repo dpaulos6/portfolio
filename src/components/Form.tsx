@@ -16,6 +16,8 @@ function Form() {
   } = useForm()
 
   async function onSubmit(data: FieldValues) {
+    await new Promise((resolve) => setTimeout(resolve, 1000))
+
     const payload = {
       ...data,
       access_key: 'd2855961-b6a6-43a9-b17b-3dbaf56f446a'
@@ -102,7 +104,7 @@ function Form() {
 
       <Button
         disabled={isSubmitting}
-        className="w-full rounded-lg bg-custom-gradient px-5 py-4 text-sm font-semibold ring-2 ring-inset ring-transparent transition-all hover:ring-foreground sm:px-10 lg:w-1/4"
+        className="w-full rounded-lg bg-gray-500 px-5 py-4 text-sm font-semibold ring-2 ring-inset ring-transparent transition-all hover:ring-foreground enabled:bg-custom-gradient disabled:bg-gray-500 disabled:text-black sm:px-10 lg:w-1/4"
       >
         Send
       </Button>
