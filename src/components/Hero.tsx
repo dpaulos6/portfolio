@@ -26,7 +26,7 @@ export default function Hero() {
         innovative technologies.
       </p>
       <div className="mb-12 flex items-center gap-6">
-        <AnchorLink href={'#contact'}>
+        <AnchorLink href={'#contact me'}>
           <Button className="rounded-lg bg-custom-gradient px-5 py-4 text-sm font-semibold ring-2 ring-inset ring-transparent transition-all hover:ring-foreground sm:px-10">
             Contact me
           </Button>
