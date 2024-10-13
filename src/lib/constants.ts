@@ -4,7 +4,7 @@ import quizImg from '/java-quiz.png'
 import todoImg from '/java-todo.png'
 import { Project } from '../interfaces/projects'
 
-export const ProjectsData: Project[] = [
+export const Constants: Project[] = [
   {
     id: 1,
     title: 'Portfolio',
@@ -38,3 +38,5 @@ export const ProjectsData: Project[] = [
     link: 'https://github.com/TahaZoabi/JAVA-TODO'
   }
 ]
+
+export const NAV_LINKS = ['home', 'about me', 'projects', 'contact me']

@@ -2,7 +2,7 @@ import Title from './ui/Title.tsx'
 import pic from '../assets/pic.jpg'
 function About() {
   return (
-    <section id={'about'}>
+    <section id={'about me'}>
       <Title>About Me</Title>
       <div className={'flex flex-col justify-center gap-6 p-2 md:flex-row'}>
         <div>

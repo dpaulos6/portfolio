@@ -41,7 +41,7 @@ function Contact() {
     <section>
       <Title>Contact Me</Title>
       <div
-        id={'contact'}
+        id={'contact me'}
         className="flex flex-col items-center justify-center p-3 md:flex-row"
       >
         <div className="flex w-full flex-col justify-around gap-5 p-3 lg:flex-row">

@@ -1,6 +1,6 @@
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { useRef } from 'react'
-
+import { NAV_LINKS } from '../../lib/constants.ts'
 type NavbarProps = {
   ulStyles: string
   navStyles: string
@@ -16,34 +16,15 @@ function Navbar({ ulStyles, navStyles, onNavItemClick }: NavbarProps) {
         ref={menuRef}
         className={ulStyles}
       >
-        <li onClick={onNavItemClick}>
-          <AnchorLink href="#home">
-            <p className="from-primary to-secondary text-xl hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent">
-              Home
-            </p>
-          </AnchorLink>
-        </li>
-        <li onClick={onNavItemClick}>
-          <AnchorLink href="#about">
-            <p className="from-primary to-secondary text-xl hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent">
-              About Me
-            </p>
-          </AnchorLink>
-        </li>
-        <li onClick={onNavItemClick}>
-          <AnchorLink href="#projects">
-            <p className="from-primary to-secondary text-xl hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent">
-              Projects
-            </p>
-          </AnchorLink>
-        </li>
-        <li onClick={onNavItemClick}>
-          <AnchorLink href="#contact">
-            <p className="from-primary to-secondary text-xl hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent">
-              Contact Me
-            </p>
-          </AnchorLink>
-        </li>
+        {NAV_LINKS.map((link) => (
+          <li onClick={onNavItemClick}>
+            <AnchorLink href={`#${link}`}>
+              <p className="from-primary to-secondary text-xl capitalize hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent">
+                {link}
+              </p>
+            </AnchorLink>
+          </li>
+        ))}
       </ul>
     </nav>
   )

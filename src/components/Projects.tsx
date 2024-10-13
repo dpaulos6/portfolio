@@ -1,5 +1,5 @@
 import Title from './ui/Title.tsx'
-import { ProjectsData } from '../lib/projectsData.ts'
+import { Constants } from '../lib/constants.ts'
 import Card from './ui/Card.tsx'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 
@@ -20,7 +20,7 @@ function Projects() {
               'mx-auto grid w-fit grid-cols-2 items-start justify-center'
             }
           >
-            {ProjectsData.map((project) => (
+            {Constants.map((project) => (
               <Card
                 key={project.id}
                 project={project}
