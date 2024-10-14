@@ -25,17 +25,23 @@ function Form() {
 
     const json = JSON.stringify(payload)
 
-    const res = await fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json'
-      },
-      body: json
-    }).then((res) => res.json())
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: json
+      }).then((res) => res.json())
 
-    if (res.success) {
-      console.log('Success', res)
+      if (res.success) {
+        console.log('Success', res)
+      } else {
+        console.error('Submission failed:', res)
+      }
+    } catch (error) {
+      console.error('Error during fetch:', error)
     }
 
     setShowAlert((prevState) => !prevState)
