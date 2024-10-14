@@ -1,6 +1,6 @@
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { useRef } from 'react'
-import { NAV_LINKS } from '../../lib/constants.ts'
+import { NAV_LINKS } from '../lib'
 type NavbarProps = {
   ulStyles: string
   navStyles: string

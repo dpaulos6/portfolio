@@ -1,6 +1,6 @@
 import { Github } from 'lucide-react'
 import React from 'react'
-import { Project } from '../../interfaces/projects'
+import { Project } from '../../lib'
 
 interface ProjectProps {
   project: Project

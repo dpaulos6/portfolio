@@ -2,9 +2,16 @@ import portfolioImg from '/portfolio.png'
 import phoneBookImg from '/phone-book.png'
 import quizImg from '/java-quiz.png'
 import todoImg from '/java-todo.png'
-import { Project } from '../interfaces/projects'
 
-export const Constants: Project[] = [
+export interface Project {
+  id: number
+  title: string
+  description: string
+  img: string
+  link: string | null
+}
+
+export const Index: Project[] = [
   {
     id: 1,
     title: 'Portfolio',

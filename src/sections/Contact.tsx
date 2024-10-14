@@ -1,7 +1,7 @@
-import Title from './ui/Title.tsx'
-import Footer from './ui/Footer.tsx'
+import Title from '../components/Title.tsx'
+import Footer from '../components/Footer.tsx'
 import { Mail, Phone, MapPin } from 'lucide-react'
-import Form from './Form.tsx'
+import Form from '../components/Form.tsx'
 
 function Contact() {
   return (

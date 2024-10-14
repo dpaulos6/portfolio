@@ -1,11 +1,11 @@
-import Title from './ui/Title.tsx'
-import { Constants } from '../lib/constants.ts'
-import Card from './ui/Card.tsx'
+import Title from '../components/Title.tsx'
+import { Index } from '../lib'
+import Card from '../components/ui/Card.tsx'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 
 function Projects() {
   return (
-    <>
+    <section>
       <div
         id={'projects'}
         className="flex items-center justify-center gap-4"
@@ -20,7 +20,7 @@ function Projects() {
               'mx-auto grid w-fit grid-cols-2 items-start justify-center'
             }
           >
-            {Constants.map((project) => (
+            {Index.map((project) => (
               <Card
                 key={project.id}
                 project={project}
@@ -29,7 +29,7 @@ function Projects() {
           </Masonry>
         </ResponsiveMasonry>
       </div>
-    </>
+    </section>
   )
 }
 

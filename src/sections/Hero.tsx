@@ -1,12 +1,12 @@
 import { Download } from 'lucide-react'
 import profileImg from '/personal-pic.png'
-import Button from './ui/Button.tsx'
+import Button from '../components/ui/Button.tsx'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import MyResume from '../assets/Resume.pdf'
 
 export default function Hero() {
   return (
-    <div
+    <section
       id={'home'}
       className="flex flex-col items-center gap-9 px-4"
     >
@@ -41,6 +41,6 @@ export default function Hero() {
           <Download className="h-5 w-5" />
         </Button>
       </div>
-    </div>
+    </section>
   )
 }

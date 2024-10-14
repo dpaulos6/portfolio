@@ -1,9 +1,9 @@
 import { Menu, Moon, Sun } from 'lucide-react'
 import { useTheme } from '../lib/theme-provider.tsx'
-import { ThemeButton } from './ui/ThemeButton.tsx'
+import { ThemeButton } from '../components/ui/ThemeButton.tsx'
 import { DialogTitle, DialogDescription } from '@radix-ui/react-dialog'
-import { Sheet, SheetContent, SheetTrigger } from './ui/Sheet.tsx'
-import Navbar from './ui/Navbar.tsx'
+import { Sheet, SheetContent, SheetTrigger } from '../components/ui/Sheet.tsx'
+import Navbar from '../components/Navbar.tsx'
 import { useState } from 'react'
 
 function Header() {

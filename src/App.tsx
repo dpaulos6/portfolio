@@ -1,9 +1,9 @@
-import Header from './components/Header.tsx'
-import Hero from './components/Hero.tsx'
-import About from './components/About.tsx'
+import Header from './sections/Header.tsx'
+import Hero from './sections/Hero.tsx'
+import About from './sections/About.tsx'
 import { ThemeProvider } from './lib/theme-provider.tsx'
-import Projects from './components/Projects.tsx'
-import Contact from './components/Contact.tsx'
+import Projects from './sections/Projects.tsx'
+import Contact from './sections/Contact.tsx'
 
 function App() {
   return (
