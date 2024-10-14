@@ -3,6 +3,15 @@ import phoneBookImg from '/phone-book.png'
 import quizImg from '/java-quiz.png'
 import todoImg from '/java-todo.png'
 
+export { default as Header } from '../sections/Header.tsx'
+export { default as Hero } from '../sections/Hero.tsx'
+export { default as About } from '../sections/About.tsx'
+export { default as Projects } from '../sections/Projects.tsx'
+export { default as Contact } from '../sections/Contact.tsx'
+export { ThemeProvider } from '../lib/theme-provider.tsx'
+
+export const NAV_LINKS = ['home', 'about me', 'projects', 'contact me']
+
 export interface Project {
   id: number
   title: string
@@ -11,7 +20,7 @@ export interface Project {
   link: string | null
 }
 
-export const Index: Project[] = [
+export const projects: Project[] = [
   {
     id: 1,
     title: 'Portfolio',
@@ -45,5 +54,3 @@ export const Index: Project[] = [
     link: 'https://github.com/TahaZoabi/JAVA-TODO'
   }
 ]
-
-export const NAV_LINKS = ['home', 'about me', 'projects', 'contact me']

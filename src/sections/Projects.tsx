@@ -1,5 +1,5 @@
 import Title from '../components/Title.tsx'
-import { Index } from '../lib'
+import { projects } from '../lib/projects.ts'
 import Card from '../components/ui/Card.tsx'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 
@@ -20,7 +20,7 @@ function Projects() {
               'mx-auto grid w-fit grid-cols-2 items-start justify-center'
             }
           >
-            {Index.map((project) => (
+            {projects.map((project) => (
               <Card
                 key={project.id}
                 project={project}
