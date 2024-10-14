@@ -1,8 +1,7 @@
-import { Download } from 'lucide-react'
+import { MoveRight } from 'lucide-react'
 import profileImg from '/personal-pic.png'
 import Button from '../components/ui/Button.tsx'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
-import MyResume from '../assets/Resume.pdf'
 
 export default function Hero() {
   return (
@@ -31,15 +30,13 @@ export default function Hero() {
             Contact me
           </Button>
         </AnchorLink>
-        <Button className="flex items-center gap-2 rounded-lg px-5 py-4 text-sm font-semibold ring-2 ring-inset ring-foreground transition-all hover:ring-accent sm:px-10">
-          <a
-            href={MyResume}
-            download="Resume.pdf"
-          >
+
+        <AnchorLink href={'#resume'}>
+          <Button className="flex items-center gap-2 rounded-lg px-5 py-4 text-sm font-semibold ring-2 ring-inset ring-foreground transition-all hover:ring-accent sm:px-10">
             Resume
-          </a>
-          <Download className="h-5 w-5" />
-        </Button>
+            <MoveRight className="h-5 w-5" />
+          </Button>
+        </AnchorLink>
       </div>
     </section>
   )

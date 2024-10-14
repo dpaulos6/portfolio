@@ -8,9 +8,16 @@ export { default as Hero } from '../sections/Hero.tsx'
 export { default as About } from '../sections/About.tsx'
 export { default as Projects } from '../sections/Projects.tsx'
 export { default as Contact } from '../sections/Contact.tsx'
+export { default as Resume } from '../sections/Resume.tsx'
 export { ThemeProvider } from '../lib/theme-provider.tsx'
 
-export const NAV_LINKS = ['home', 'about me', 'projects', 'contact me']
+export const NAV_LINKS = [
+  'home',
+  'about me',
+  'projects',
+  'contact me',
+  'resume'
+]
 
 export interface Project {
   id: number
