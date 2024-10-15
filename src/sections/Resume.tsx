@@ -6,6 +6,8 @@ import { MoveRight } from 'lucide-react'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { useState } from 'react'
 
+type TokenType = string | null
+
 function Resume() {
   const {
     register,
@@ -14,7 +16,11 @@ function Resume() {
     reset
   } = useForm()
 
-  const [recaptchaToken, setRecaptchaToken] = useState(null)
+  const [recaptchaToken, setRecaptchaToken] = useState<TokenType>(null)
+
+  const onCaptchaChange = (token: TokenType) => {
+    setRecaptchaToken(token)
+  }
 
   const onSubmit = async () => {
     if (!recaptchaToken) {
@@ -81,6 +87,7 @@ function Resume() {
         <ReCAPTCHA
           className={'flex items-center justify-center p-2'}
           sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+          onChange={onCaptchaChange}
         />
       </form>
     </section>
