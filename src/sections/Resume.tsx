@@ -1,8 +1,10 @@
 import { Input } from '../components/ui/Input.tsx'
-import { useForm } from 'react-hook-form'
+import { FieldValues, useForm } from 'react-hook-form'
 import Title from '../components/Title.tsx'
 import Button from '../components/ui/Button.tsx'
 import { MoveRight } from 'lucide-react'
+import ReCAPTCHA from 'react-google-recaptcha'
+import { useState } from 'react'
 
 function Resume() {
   const {
@@ -12,9 +14,22 @@ function Resume() {
     reset
   } = useForm()
 
-  async function onSubmit() {
+  const [recaptchaToken, setRecaptchaToken] = useState(null)
+
+  const onCaptchaChange = (token: never) => {
+    setRecaptchaToken(token)
+  }
+
+  const onSubmit = async (data: FieldValues) => {
+    if (!recaptchaToken) {
+      alert('Please complete the CAPTCHA first.')
+      return
+    }
+
     await new Promise((resolve) => setTimeout(resolve, 1000))
+
     reset()
+    setRecaptchaToken(null)
   }
 
   return (
@@ -24,6 +39,7 @@ function Resume() {
     >
       <Title>Resume</Title>
       <form
+        id={'demo-form'}
         onSubmit={handleSubmit(onSubmit)}
         className={'flex-col items-center justify-center'}
       >
@@ -32,7 +48,7 @@ function Resume() {
         </p>
         <div
           className={
-            'flex flex-col items-center justify-center gap-4 sm:flex-row'
+            'flex flex-col items-center justify-center gap-4 sm:mb-5 sm:flex-row'
           }
         >
           <label className="p-2">Email</label>
@@ -52,15 +68,22 @@ function Resume() {
           <Button
             disabled={isSubmitting}
             className={
-              'rounded-lg bg-gray-500 px-5 py-2 text-sm font-semibold ring-2 ring-inset ring-transparent transition-all hover:ring-foreground enabled:bg-custom-gradient disabled:bg-gray-500'
+              'g-recaptcha mb-5 rounded-lg bg-gray-500 px-5 py-2 text-sm font-semibold ring-2 ring-inset ring-transparent transition-all hover:ring-foreground enabled:bg-custom-gradient disabled:bg-gray-500 sm:mb-0'
             }
           >
             <MoveRight />
           </Button>
+
           {errors.email && (
             <p className={'text-red-500'}>{`${errors.email.message}`}</p>
           )}
         </div>
+
+        {/* reCAPTCHA Component */}
+        <ReCAPTCHA
+          onChange={onCaptchaChange}
+          sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+        />
       </form>
     </section>
   )
