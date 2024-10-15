@@ -5,6 +5,7 @@ import Button from '../components/ui/Button.tsx'
 import { MoveRight } from 'lucide-react'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { useState } from 'react'
+import { Alert, AlertDescription, AlertTitle } from '../components/ui/Alert.tsx'
 
 type TokenType = string | null
 
@@ -15,7 +16,7 @@ function Resume() {
     formState: { isSubmitting, errors },
     reset
   } = useForm()
-
+  const [showAlert, setShowAlert] = useState(false)
   const [recaptchaToken, setRecaptchaToken] = useState<TokenType>(null)
 
   const onCaptchaChange = (token: TokenType) => {
@@ -30,6 +31,8 @@ function Resume() {
 
     await new Promise((resolve) => setTimeout(resolve, 1000))
 
+    setShowAlert((prevState) => !prevState)
+    setTimeout(() => setShowAlert((prevState) => !prevState), 3000)
     reset()
     setRecaptchaToken(null)
   }
@@ -89,6 +92,16 @@ function Resume() {
           sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
           onChange={onCaptchaChange}
         />
+        {showAlert && (
+          <Alert
+            className={
+              'fixed left-1/2 top-5 z-10 w-1/3 -translate-x-1/2 transform'
+            }
+          >
+            <AlertTitle>Notification!</AlertTitle>
+            <AlertDescription>Resume Sent Successfully!</AlertDescription>
+          </Alert>
+        )}
       </form>
     </section>
   )
