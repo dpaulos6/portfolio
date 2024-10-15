@@ -1,5 +1,5 @@
 import { Input } from '../components/ui/Input.tsx'
-import { FieldValues, useForm } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import Title from '../components/Title.tsx'
 import Button from '../components/ui/Button.tsx'
 import { MoveRight } from 'lucide-react'
@@ -16,11 +16,7 @@ function Resume() {
 
   const [recaptchaToken, setRecaptchaToken] = useState(null)
 
-  const onCaptchaChange = (token: never) => {
-    setRecaptchaToken(token)
-  }
-
-  const onSubmit = async (data: FieldValues) => {
+  const onSubmit = async () => {
     if (!recaptchaToken) {
       alert('Please complete the CAPTCHA first.')
       return
@@ -39,6 +35,8 @@ function Resume() {
     >
       <Title>Resume</Title>
       <form
+        action={'?'}
+        method={'POST'}
         id={'demo-form'}
         onSubmit={handleSubmit(onSubmit)}
         className={'flex-col items-center justify-center'}
@@ -51,7 +49,7 @@ function Resume() {
             'flex flex-col items-center justify-center gap-4 sm:mb-5 sm:flex-row'
           }
         >
-          <label className="p-2">Email</label>
+          <label className="hidden sm:inline-block">Email</label>
 
           <Input
             className={'w-full p-3 shadow-md sm:w-1/2'}
@@ -81,7 +79,7 @@ function Resume() {
 
         {/* reCAPTCHA Component */}
         <ReCAPTCHA
-          onChange={onCaptchaChange}
+          className={'flex items-center justify-center p-2'}
           sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
         />
       </form>

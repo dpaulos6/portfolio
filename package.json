@@ -16,6 +16,7 @@
     "@mui/material": "^6.1.2",
     "@radix-ui/react-dialog": "^1.1.2",
     "@radix-ui/react-dropdown-menu": "^2.1.2",
+    "@types/react-google-recaptcha": "^2.1.9",
     "class-variance-authority": "^0.7.0",
     "lucide-react": "^0.451.0",
     "prettier": "^3.3.3",
