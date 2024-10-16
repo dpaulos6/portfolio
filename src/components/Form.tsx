@@ -20,7 +20,7 @@ function Form() {
 
     const payload = {
       ...data,
-      access_key: 'd2855961-b6a6-43a9-b17b-3dbaf56f446a'
+      access_key: import.meta.env.VITE_WEB3_ACCESS_KEY
     }
 
     const json = JSON.stringify(payload)
