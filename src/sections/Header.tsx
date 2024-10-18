@@ -17,7 +17,7 @@ function Header() {
   return (
     <header className="mb-7 flex items-center justify-between p-4">
       {/* Logo */}
-      <div className="flex items-center">
+      <div className="flex select-none items-center">
         <span className="from-primary to-secondary text-3xl font-bold leading-tight tracking-wide transition duration-300 ease-in-out hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent">
           Taha
         </span>
