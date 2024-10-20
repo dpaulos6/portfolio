@@ -6,8 +6,13 @@ import { MoveRight } from 'lucide-react'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { useState } from 'react'
 import { Alert, AlertDescription, AlertTitle } from '../components/ui/Alert.tsx'
+// import ResumeEmail from '../emails/EmailResume.tsx'
 
 type TokenType = string | null
+
+type FormData = {
+  email: string
+}
 
 function Resume() {
   const {
@@ -15,7 +20,8 @@ function Resume() {
     handleSubmit,
     formState: { isSubmitting, errors },
     reset
-  } = useForm()
+  } = useForm<FormData>()
+
   const [showAlert, setShowAlert] = useState(false)
   const [recaptchaToken, setRecaptchaToken] = useState<TokenType>(null)
 
@@ -23,18 +29,47 @@ function Resume() {
     setRecaptchaToken(token)
   }
 
-  const onSubmit = async () => {
+  const onSubmit = async (data: FormData) => {
     if (!recaptchaToken) {
       alert('Please complete the CAPTCHA first.')
       return
     }
 
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    const requestBody = {
+      from: 'Taha Zoabi <noreply@tahazoabi.netlify.app>',
+      to: [data.email],
+      subject: 'Your Resume Request',
+      text: 'Here is the content of your resume.'
+    }
 
-    setShowAlert((prevState) => !prevState)
-    setTimeout(() => setShowAlert((prevState) => !prevState), 3000)
-    reset()
-    setRecaptchaToken(null)
+    console.log('Request Body:', requestBody)
+
+    try {
+      const response = await fetch('/api/emails', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${import.meta.env.VITE_RESEND_API_KEY}`
+        },
+        body: JSON.stringify(requestBody)
+      })
+
+      if (!response.ok) {
+        const errorData = await response.json()
+        console.error('Error details:', errorData)
+        throw new Error('Failed to send email')
+      }
+
+      const emailData = await response.json()
+      console.log('Email sent successfully:', emailData)
+      setShowAlert(true)
+      setTimeout(() => setShowAlert(false), 3000)
+      reset()
+      setRecaptchaToken(null)
+    } catch (error) {
+      console.error('Error sending email:', error)
+      alert('Failed to send email. Please try again later.')
+    }
   }
 
   return (
@@ -44,9 +79,6 @@ function Resume() {
     >
       <Title>Resume</Title>
       <form
-        action={'?'}
-        method={'POST'}
-        id={'demo-form'}
         onSubmit={handleSubmit(onSubmit)}
         className={'flex-col items-center justify-center'}
       >
@@ -59,7 +91,6 @@ function Resume() {
           }
         >
           <label className="hidden sm:inline-block">Email</label>
-
           <Input
             className={'w-full p-3 shadow-md sm:w-1/2'}
             {...register('email', {
@@ -71,7 +102,6 @@ function Resume() {
             })}
             placeholder={'Enter your email'}
           />
-
           <Button
             disabled={isSubmitting}
             className={
@@ -80,7 +110,6 @@ function Resume() {
           >
             <MoveRight />
           </Button>
-
           {errors.email && (
             <p className={'text-red-500'}>{`${errors.email.message}`}</p>
           )}
