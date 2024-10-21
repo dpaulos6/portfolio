@@ -36,7 +36,7 @@ function Resume() {
     }
 
     const requestBody = {
-      from: 'Taha Zoabi <noreply@tahazoabi.netlify.app>',
+      from: ' <Taha@tahazoabi.com>',
       to: [data.email],
       subject: 'Your Resume Request',
       text: 'Here is the content of your resume.'
