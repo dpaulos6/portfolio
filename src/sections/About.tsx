@@ -1,5 +1,5 @@
 import Title from '../components/Title.tsx'
-import pic from '../assets/pic.jpg'
+import pic from '/pic.jpg'
 function About() {
   return (
     <section id={'about me'}>
