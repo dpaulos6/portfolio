@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import Title from '../components/Title.tsx'
 import Button from '../components/ui/Button.tsx'
 import { MoveRight } from 'lucide-react'
-import ReCAPTCHA from 'react-google-recaptcha'
+// import ReCAPTCHA from 'react-google-recaptcha'
 import { useState } from 'react'
 import { Alert, AlertDescription, AlertTitle } from '../components/ui/Alert.tsx'
 // import ResumeEmail from '../emails/EmailResume.tsx'
@@ -25,9 +25,9 @@ function Resume() {
   const [showAlert, setShowAlert] = useState(false)
   const [recaptchaToken, setRecaptchaToken] = useState<TokenType>(null)
 
-  const onCaptchaChange = (token: TokenType) => {
-    setRecaptchaToken(token)
-  }
+  // const onCaptchaChange = (token: TokenType) => {
+  //   setRecaptchaToken(token)
+  // }
 
   const onSubmit = async (data: FormData) => {
     if (!recaptchaToken) {
@@ -116,11 +116,11 @@ function Resume() {
         </div>
 
         {/* reCAPTCHA Component */}
-        <ReCAPTCHA
-          className={'flex items-center justify-center p-2'}
-          sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
-          onChange={onCaptchaChange}
-        />
+        {/*<ReCAPTCHA*/}
+        {/*  className={'flex items-center justify-center p-2'}*/}
+        {/*  sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}*/}
+        {/*  onChange={onCaptchaChange}*/}
+        {/*/>*/}
         {showAlert && (
           <Alert
             className={
